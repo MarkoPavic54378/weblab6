@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SnapNote</title>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#111111">
+</head>
+<body>
+  <h1>SnapNote radi</h1>
+  <button id="ping">Ping server</button>
+  <pre id="out"></pre>
+  <section>
+  <h2>Nova foto-bilješka</h2>
+
+  <div id="cameraBlock" hidden>
+    <video id="video" autoplay playsinline muted></video>
+
+    <div style="margin-top:10px; display:flex; gap:10px; align-items:center;">
+      <button id="btnStartCamera" type="button">Uključi kameru</button>
+      <button id="btnCapture" type="button" disabled>Slikaj</button>
+      <button id="btnStopCamera" type="button" disabled>Ugasi kameru</button>
+    </div>
+
+    <canvas id="canvas" hidden></canvas>
+  </div>
+
+  <div id="fallbackBlock" hidden>
+    <p>Kamera nije dostupna (ili je odbijena dozvola). Odaberi sliku:</p>
+    <input id="file" type="file" accept="image/*" capture="environment">
+  </div>
+
+  <label style="display:block; margin-top:12px;">
+    Opis:
+    <input id="text" placeholder="Npr. račun za benzin…" />
+  </label>
+
+  <h3>Preview</h3>
+  <img id="preview" alt="Preview" style="max-width:360px; display:block; border-radius:10px;" />
+  <button id="btnSave" type="button" style="margin-top:12px;">Spremi bilješku</button>
+
+<h2 style="margin-top:18px;">Bilješke</h2>
+<ul id="notesList"></ul>
+
+</section>
+
+  <script type="module" src="/app.js"></script>
+
+</body>
+</html>
