@@ -174,12 +174,12 @@ setupPush().catch(() => {});
 
 window.__getLastPhotoBlob = () => lastPhotoBlob;
 
-document.getElementById("ping").onclick = async () => {
+/*document.getElementById("ping").onclick = async () => {
   const r = await fetch("/api/ping");
   const j = await r.json();
   document.getElementById("out").textContent =
     JSON.stringify(j, null, 2);
-};
+};*/
 async function renderNotes() {
   const notes = await listNotes();
   notesList.innerHTML = "";
